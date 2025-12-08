@@ -1,0 +1,23 @@
+// Problem: Majority Element
+// Link: https://leetcode.com/problems/majority-element/
+// Approach: Boyer-Moore Voting Algorithm
+// Time: O(n)
+// Space: O(1)
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        int c=0,cur_ele=nums[0];
+        for(int i=0;i<nums.length;i++){
+            if(c==0){
+                cur_ele=nums[i];
+            }
+            if(nums[i]==cur_ele){
+                c++;
+            }
+            else  {
+                c--;
+            }
+        }
+        return cur_ele;
+    }
+}
