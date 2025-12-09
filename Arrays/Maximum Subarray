@@ -1,0 +1,34 @@
+// Problem: Maximum Subarray
+// Link: https://leetcode.com/problems/maximum-subarray/
+// Approach: Kadane’s Algorithm
+/*   ->Main Idea
+If your running sum becomes negative,
+then it will only reduce the sum of any future subarray.
+So, throw it away and start fresh.
+     ->Real-Life Analogy
+Imagine you are collecting coins along a path:
+Positive coins (+) increase your total.
+Negative coins (-) reduce your total.
+If your total becomes negative, you drop the bag and pick a new empty bag… because a negative total will only make future coins useless.
+This “bag dropping” is Kadane’s key idea.
+  ->when to use
+1️⃣when the problem ask for contiguous subarray/segment.
+2️⃣when  it want the maximum/minimum sum or score(Kadane only works on continuous segments).
+3️⃣ when it has  positive and negative values.
+4️⃣ If the order is fixed; no reordering allowed.
+so these are the conditions i should use it right*/
+// Time: O(n)
+// Space: O(1)
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int sum=0, max=Integer.MIN_VALUE;
+        for(int i=0;i<nums.length;i++){
+            sum +=nums[i];
+            if(sum>max)
+            max=sum;
+            if(sum<0)
+            sum=0;
+        }
+        return max;
+    }
+}
