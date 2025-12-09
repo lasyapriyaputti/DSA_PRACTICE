@@ -16,7 +16,7 @@ This “bag dropping” is Kadane’s key idea.
 2️⃣when  it want the maximum/minimum sum or score(Kadane only works on continuous segments).
 3️⃣ when it has  positive and negative values.
 4️⃣ If the order is fixed; no reordering allowed.
-so these are the conditions i should use it right*/
+*/
 // Time: O(n)
 // Space: O(1)
 class Solution {
