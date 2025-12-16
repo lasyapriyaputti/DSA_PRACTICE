@@ -1,0 +1,33 @@
+// Problem:Rearrange Array Elements by Sign
+// Link: https://leetcode.com/problems/Rearrange-Array-Elements-by-Sign/
+// Time: O(n) as we traverse only once 
+// Space: O(n)
+class Solution {
+    public int[] rearrangeArray(int[] nums) {
+        int[] arr =new int[nums.length];
+        int pos=0,neg=1;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>0){
+                arr[pos]=nums[i];
+                pos=pos+2;
+            }
+            else{
+                arr[neg]=nums[i];
+                neg=neg+2;
+            }
+        }
+        return arr;
+    }
+}
+//bruth force
+/* 1. take a negative array and positive array ;
+2.now traverse the original array and put positive numbers in positive array and negative numbers in negative array;
+3.now take another array or original array and place postive numbers in postive indices and negative numbers in negative indices 
+
+[You scan the array once to separate positives and negatives.
+ Time = O(n)
+ You scan again to place elements back in alternating order.
+Time = O(n)
+O(n) + O(n) = O(2n) ]
+// Space: O(n)
+*/
